@@ -1,0 +1,391 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>All About BMI</title>
+</head>
+<style>
+    * {
+        margin: 0;
+        padding: 0;
+    }
+/* 
+    html{
+        font-size: 10px;
+    } */
+
+    .navbar {
+        background-color: black;
+        height: 60px;
+        width: 100vw;
+        margin-bottom: 40px;
+        text-align: right;
+        position: sticky;
+        top: 0;
+    }
+
+    .et {
+        display: inline;
+        font-size: 35px;
+        margin: 30px;
+    }
+
+    a {
+        text-decoration: none;
+        color: white;
+    }
+
+    .que {
+        color: purple;
+        padding-left: 30px;
+        font-weight: 700;
+        font-size: 40px;
+    }
+
+    .para {
+        padding-left: 30px;
+        padding-right: 30px;
+        font-style: italic;
+        font-size: 25px;
+        font-family: 'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif;
+        line-height: 1.4;
+    }
+
+    .img {
+        display: flex;
+        flex-direction: row;
+        flex-wrap: wrap;
+    }
+
+    .st {
+        display: inline;
+    }
+
+    .about {
+        margin-left: 300px;
+    }
+
+    #table {
+        background-color: azure;
+        color: blue;
+        font-size: 30px;
+    }
+
+    #tabhead {
+        background-color: blue;
+        color: white;
+    }
+
+    .yellow {
+        color: rgb(255, 8, 0);
+        padding-left: 20px;
+    }
+
+    .last {
+        background-color: black;
+        color: white;
+        padding-top: 20px;
+    }
+
+    li {
+        display: inline;
+        font-size: 30px;
+        margin: 30px;
+        cursor: pointer;
+    }
+
+    .lasthead {
+        text-align: center;
+        font-size: 40px;
+    }
+
+    @media (max-width: 900px) {
+        .et{
+            font-size: 25px;
+            margin: 20px;
+        }
+    }
+    @media (max-width: 660px) {
+        .et{
+            font-size: 23px;
+            margin: 18px;
+        }
+    }
+    @media (max-width: 550px) {
+        .et{
+            font-size: 20px;
+            margin: 12px;
+        } 
+    }
+    @media (max-width: 475px) {
+        .et{
+            font-size: 16px;
+            margin: 7px;
+        }
+    }
+    @media (max-width: 413px) {
+        .et{
+            font-size: 14px;
+            margin: 5px;
+        }
+    }
+
+    @media (max-width: 306px) {
+        .et{
+            font-size: 12px;
+        }
+    }
+    @media (max-width: 268px) {
+        .et{
+            margin: 3px;
+        }
+    }
+
+    @media (max-width: 505px) {
+        img{
+            height: 300px;
+            width: 400px;
+        }
+        .about{
+            margin-left: 150px;
+        }
+    }
+    @media (max-width: 402px) {
+        img{
+            height: 300px;
+            width: 300px;
+        }
+        .about{
+            margin-left: 70px;
+        }
+    }
+    @media (max-width: 308px) {
+        img{
+            height: 200px;
+            width: 200px;
+        }
+        .about{
+            margin-left: 3*0px;
+        }
+    }
+    @media (max-width: 268px) {
+        .about{
+            margin-left: 10px;
+        }
+    }
+
+    @media (max-width: 1222px) {
+        li {
+            font-size: 25px;
+            margin: 20px;
+        }
+        .lasthead{
+            font-size: 30px;
+        }
+    }
+    @media (max-width: 970px) {
+        li{
+            font-size: 22px;
+            margin: 17px;
+        }
+    }
+    @media (max-width: 852px) {
+        li{
+            font-size: 19px;
+            margin: 11px;
+        }
+    }
+    @media (max-width: 700px) {
+        li{
+            font-size: 18px;
+            margin: 10px;
+        }
+        .lasthead{
+            font-size: 25px;
+        }
+    }
+    @media (max-width: 578px) {
+        li{
+            margin: 7px;
+            font-size: 16px;
+        }
+        .lasthead{
+            font-size: 22px;
+        }
+    }
+    @media (max-width: 433px) {
+        li{
+            font-size: 13px;
+            margin: 5px;
+        }
+        .lasthead{
+            font-size: 19px;
+        }
+    }
+    @media (max-width: 350px) {
+        li{
+            font-size: 10px;
+        }
+        .lasthead{
+            font-size: 16px;
+        }
+    }
+</style>
+
+<body>
+    <div class="navbar">
+        <nav>
+            <ul>
+                <li class="et"><a href="index.html" id="index" onmouseover="red()" onmouseout="again()">Home</a></li>
+                </li>
+                <li class="et"><a href="measure.html" id="measure" onmouseover="yellow()" onmouseout="again()">Measuring
+                        BMI</a>
+                </li>
+                <li class="et"><a href="precautions.html" id="pre" onmouseover="blue()"
+                        onmouseout="again()">Precautions</a></li>
+                <li class="et"><a href="about.html" id="about" onmouseover="green()" onmouseout="again()">About BMI</a>
+            </ul>
+        </nav>
+    </div>
+    <p class="que">Body Mass Index (BMI)</p>
+    <hr><br>
+    <div class="para">
+        <p>
+            Body mass index (BMI) is a value derived from the mass (weight) and height of a person. The BMI is defined
+            as the body mass divided by the square of the body height, and is expressed in units of kg/m2, resulting
+            from mass in kilograms and height in metres.</p>
+
+        <p>The BMI may be determined using a table[a] or chart which displays BMI as a function of mass and height using
+            contour lines or colours for different BMI categories, and which may use other units of measurement
+            (converted to metric units for the calculation).</p>
+        <p>
+            The BMI is a convenient rule of thumb used to broadly categorize a person as underweight, normal weight,
+            overweight, or obese based on tissue mass (muscle, fat, and bone) and height. Major adult BMI
+            classifications are underweight (under 18.5 kg/m2), normal weight (18.5 to 24.9), overweight (25 to 29.9),
+            and obese (30 or more).[1] When used to predict an individual's health, rather than as a statistical
+            measurement for groups, the BMI has limitations that can make it less useful than some of the alternatives,
+            especially when applied to individuals with abdominal obesity, short stature, or unusually high muscle mass.
+
+            BMIs under 20 and over 25 have been associated with higher all-cause mortality, with the risk increasing
+            with distance from the 20–25 range.</p>
+    </div>
+    <hr><br><br>
+    <p class="que">History</p>
+    <hr><br>
+    <div class="para">
+        <p>HistoryObesity and BMI
+            Adolphe Quetelet, a Belgian astronomer, mathematician, statistician, and sociologist, devised the basis of
+            the BMI between 1830 and 1850 as he developed what he called "social physics".[3] The modern term "body mass
+            index" (BMI) for the ratio of human body weight to squared height was coined in a paper published in the
+            July 1972 edition of the Journal of Chronic Diseases by Ancel Keys and others. In this paper, Keys argued
+            that what he termed the BMI was "if not fully satisfactory, at least as good as any other relative weight
+            index as an indicator of relative obesity".</p>
+
+        <p>The interest in an index that measures body fat came with observed increasing obesity in prosperous Western
+            societies. Keys explicitly judged BMI as appropriate for population studies and inappropriate for individual
+            evaluation. Nevertheless, due to its simplicity, it has come to be widely used for preliminary diagnoses.[7]
+            Additional metrics, such as waist circumference, can be more useful.</p>
+
+        <p>The BMI is expressed in kg/m2, resulting from mass in kilograms and height in metres. If pounds and inches
+            are used, a conversion factor of 703 (kg/m2)/(lb/in2) is applied. When the term BMI is used informally, the
+            units are usually omitted.
+            BMI provides a simple numeric measure of a person's thickness or thinness, allowing health professionals to
+            discuss weight problems more objectively with their patients. BMI was designed to be used as a simple means
+            of classifying average sedentary (physically inactive) populations, with an average body composition.[9] For
+            such individuals, the BMI value recommendations as of 2014 are as follows: 18.5 to 24.9 kg/m2 may indicate
+            optimal weight, lower than 18.5 may indicate underweight, 25 to 29.9 may indicate overweight, and 30 or more
+            may indicate obese.[7][8] Lean male athletes often have a high muscle-to-fat ratio and therefore a BMI that
+            is misleadingly high relative to their body-fat percentage.</p>
+    </div>
+    <hr>
+    <h1 class="yellow">There Are Three Types Of classifications By Doing The BMI -:</h1>
+    <br><br>
+    <div class="img">
+        <div class="img1">
+            <img src="fatty.jpg" alt="1st classifications" height="400px" width="500px">
+        </div>
+        <div class="img2">
+            <img src="Underweight.jpg" alt="2nd classifications" height="400px" width="500px">
+        </div>
+        <div class="img3">
+            <img src="normal.jpg" alt="3rd classifications" height="400px" width="500px">
+        </div>
+    </div>
+    <hr>
+    <div class="about">
+        <table border="10" id="table">
+            <caption id="tabhead">
+                classifications According tO BMI
+            </caption>
+            <tr align="center">
+                <td>1.</td>
+                <td>Overweight</td>
+            </tr>
+            <tr align="center">
+                <td>2.</td>
+                <td>Normal</td>
+            </tr>
+            <tr align="center">
+                <td>3.</td>
+                <td>UnderWeight</td>
+            </tr>
+        </table>
+    </div>
+    <br>
+    <hr><br><br>
+    <footer>
+        <div class="last">
+            <ul>
+                <li onmouseover="change()">Tems Of Use</li>
+                <li onmouseover="change()">Privacy &amp; Policy</li>
+                <li onmouseover="change()">Contact Us</li>
+                <li onmouseover="change()">Our More Sites</li>
+                <br>
+                <p class="lasthead">Copyright By &copy; bmi.netlify.app <br>
+                    Developed By Dipanshu Joshi DJ</p>
+            </ul>
+        </div>
+    </footer>
+</body>
+<script>
+    function red() {
+        document.getElementById("index").style.textDecoration = "underline red"
+        document.getElementById("index").style.color = 'red'
+    }
+
+    function green() {
+        document.getElementById("about").style.textDecoration = "underline green"
+        document.getElementById("about").style.color = 'green'
+    }
+
+    function yellow() {
+        document.getElementById("measure").style.textDecoration = "underline yellow"
+        document.getElementById("measure").style.color = 'yellow'
+    }
+
+    function blue() {
+        document.getElementById("pre").style.textDecoration = "underline blue"
+        document.getElementById("pre").style.color = 'blue'
+    }
+
+
+    function again() {
+        document.getElementById("index").style.textDecoration = 'none'
+        document.getElementById("index").style.color = "white"
+
+        document.getElementById("about").style.textDecoration = 'none'
+        document.getElementById("about").style.color = "white"
+
+        document.getElementById("measure").style.textDecoration = 'none'
+        document.getElementById("measure").style.color = "white"
+
+        document.getElementById("pre").style.textDecoration = 'none'
+        document.getElementById("pre").style.color = "white"
+
+    }
+</script>
+
+</html>

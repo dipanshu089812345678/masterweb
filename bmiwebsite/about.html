@@ -1,0 +1,161 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>About Categories Of BMI</title>
+</head>
+<style>
+    * {
+        margin: 0;
+        padding: 0;
+    }
+
+    .head {
+        color: purple;
+        padding: 20px;
+    }
+
+    li{
+        list-style: inside;
+        font-size: 25px;
+        padding-left: 30px;
+    }
+
+    .box {
+        border: 3px solid grey;
+        box-shadow: 2px 2px 2px 2px black;
+        margin: 20px;
+        width: 70vw;
+    }
+
+    .inner {
+        font-size: 25px;
+        margin-left: 130px;
+        border: 4px solid black;
+        padding: 5px;
+        width: 10vw;
+        text-align: center;
+    }
+
+    #except {
+        width: 20vw;
+        margin-bottom: 30px;
+    }
+
+    #rate {
+        padding-left: 6px;
+        font-size: 35px;
+        border-radius: 6px;
+        margin-left: 20px;
+    }
+
+    #btn {
+        padding: 6px;
+        padding-left: 30px;
+        padding-right: 30px;
+        background: conic-gradient(rgb(85, 255, 0) 0deg 90deg, rgba(183, 183, 87, 0.584) 180deg 360deg);
+        font-size: 25px;
+        border-radius: 6px;
+        cursor: pointer;
+    }
+
+    .res{
+        color: red;
+        margin-left: 20px;
+    }
+
+    @media (max-width: 645px) {
+        .inner{
+            font-size: 20px;
+        }
+        #rate{
+            font-size: 30px;
+        }
+        #btn{
+            font-size: 20px;
+        } 
+    }
+    
+    @media (max-width: 550px) {
+        .inner{
+            font-size: 17px;
+        }
+        #rate{
+            font-size: 27px;
+        }
+        #btn{
+            font-size: 17px;
+        } 
+    }
+</style>
+
+<body>
+    <div class="box">
+        <h1 class="head">1st Caregory - OverWeight</h1>
+        <ul>
+            <li>If BMI Is Greater Than 25.000 Then You Will Come In This categorie.</li>
+        </ul>
+        <div class="inner">
+            <b>BMI > 25</b>
+        </div>
+        <br><br>
+        <h1 class="head">2nd Caregory - UnderWeight</h1>
+        <ul>
+            <li>If bmi is less than 18.5 than only the person is called underweight person.</li>
+        </ul>
+        <div class="inner">
+            <b>BMI < 18.5</b>
+        </div>
+        <br><br>
+        <h1 class="head">3rd Caregory - Normal Person</h1>
+        <ul>
+            <li>If BMI Is in between 18.5 and 24.9 than a normal is form.</li>
+        </ul>
+        <div class="inner" id="except">
+            <b>BMI < 18.5 and BMI < 24.9</b>
+        </div>
+    </div>
+    <br><br>
+    <div class="expert">
+        <h1 class="head">Please Rate About Our Website From 1 To 10 -:</h1>
+        <br>
+        <input type="text" name="" id="rate">
+        <button id="btn" onclick="submit()">Submit</button>
+        <div class="res">
+            
+        </div>
+    </div>
+    <br><br>
+</body>
+<script>
+    function submit() {
+        var rate = document.getElementById("rate").value;
+        // alert(rate)
+        if (rate.length > 0) {
+            if (rate >= 1 && rate <= 5) {
+                alert("Thank You We Will Work On It To Make Useful for you.")
+            }
+
+            else if (rate > 5 && rate <= 7) {
+                alert("Thank You For Your Comment")
+            }
+
+            else if (rate > 7 && rate <= 10) {
+                alert("it is Wonderful , You Have Given uS a Rating Of between 7 to 10.")
+            }
+
+            else if (rate > 10) {
+                alert("Please Rate Among 1 To 10.")
+            }
+        }
+
+        else{
+            alert("please rate it first!!!!")
+        }
+    }
+</script>
+
+</html>

@@ -1,0 +1,282 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Measuring BMI</title>
+</head>
+<style>
+    * {
+        margin: 0;
+        padding: 0;
+    }
+
+    .last {
+        background-color: black;
+        color: white;
+        padding-top: 20px;
+    }
+
+    li {
+        display: inline;
+        font-size: 30px;
+        margin: 30px;
+        cursor: pointer;
+    }
+
+    .lasthead {
+        text-align: center;
+    }
+
+    .first {
+        text-align: center;
+        font-weight: 800;
+        font-size: 50px;
+        color: green;
+        background-color: black;
+        margin-bottom: 50px;
+    }
+
+    .checking {
+        color: red;
+    }
+
+    #btn {
+        cursor: pointer;
+        font-size: 25px;
+        background: conic-gradient(rgb(248, 0, 0) 0deg 90deg, rgb(240, 230, 140) 180deg 360deg);
+        color: white;
+        box-shadow: 2px 1px 2px 1px black;
+        border-radius: 4px;
+    }
+
+    input {
+        font-size: 22px;
+        border-radius: 6px;
+        padding-left: 5px;
+    }
+
+    .main {
+        height: 100vh;
+        width: 100vw;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+    }
+
+    .under {
+        height: 500px;
+        width: 500px;
+        background: aqua;
+        padding: 60px;
+        border-radius: 6px;
+    }
+
+    h1 {
+        font-size: 40px;
+    }
+
+    #res {
+        height: 70px;
+        max-width: 100vw;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+    }
+
+    .cls {
+        color: white;
+        text-align: center;
+        padding: 8px;
+    }
+    @media (max-width: 1222px) {
+        li {
+            font-size: 25px;
+            margin: 20px;
+        }
+        .lasthead{
+            font-size: 30px;
+        }
+    }
+    @media (max-width: 970px) {
+        li{
+            font-size: 22px;
+            margin: 17px;
+        }
+    }
+    @media (max-width: 852px) {
+        li{
+            font-size: 19px;
+            margin: 11px;
+        }
+    }
+    @media (max-width: 700px) {
+        li{
+            font-size: 16px;
+            margin: 9px;
+        }
+        .lasthead{
+            font-size: 25px;
+        }
+    }
+    @media (max-width: 578px) {
+        li{
+            margin: 5px;
+            font-size: 14px;
+        }
+        .lasthead{
+            font-size: 22px;
+        }
+    }
+    @media (max-width: 433px) {
+        li{
+            font-size: 13px;
+            margin: 5px;
+        }
+        .lasthead{
+            font-size: 19px;
+        }
+    }
+    @media (max-width: 350px) {
+        li{
+            font-size: 10px;
+        }
+        .lasthead{
+            font-size: 16px;
+        }
+    }
+    @media (max-width: 778px) {
+        .under{
+            height: 500px;
+            width: 400px;
+        }
+        input{
+            font-size: 19px;
+        }
+    }
+    @media (max-width: 615px) {
+        .under{
+            width: 300px;
+            height: 450px;
+        }
+    }
+    @media (max-width: 515px) {
+        .under{
+            width: 300px;
+            height: 450px;
+        }
+        input{
+            font-size: 16px;
+        }
+        #btn{
+            font-size: 20px;
+        }
+    }
+</style>
+
+<body>
+    <h1 class="first">BMI measurement</h1>
+    <div class="main">
+        <div class="under">
+            <h1>Enter Your Height(in CM) -:</h1>
+            <br>
+            <input type="text" id="height" onkeyup="check()">
+            <div class="checking" id="check1"></div>
+            <br><br><br>
+            <h1>Enter Your Weight(in Kg) -:</h1>
+            <br>
+            <input type="text" id="weight" onkeyup="check2()">
+            <div class="checking" id="check2"></div>
+            <br><br><br>
+            <button id="btn" onclick="cal()" onmouseover="ok()" onmouseout="again()">Calculate BMI</button>
+            <br><br><br><br>
+            <input type="text" id="ans" readonly="">
+            <br><br><br>
+            <div id="res">
+                <div class="cls">
+
+                </div>
+            </div>
+        </div>
+    </div>
+    <br><br><br><br>
+    <footer>
+        <div class="last">
+            <ul>
+                <li>Tems Of Use</li>
+                <li>Privacy &amp; Policy</li>
+                <li>Contact Us</li>
+                <li>Our More Sites</li>
+                <br>
+                <h1 class="lasthead">Copyright By &copy; bmi.netlify.app <br>
+                    Developed By Dipanshu Joshi DJ</h1>
+            </ul>
+        </div>
+    </footer>
+</body>
+<script>
+    function check() {
+        var height = document.getElementById("height").value;
+        if (isNaN(height)) {
+            document.getElementById("check1").innerText = "**Please Enter The Height (Number) Only**"
+            document.getElementById("height").style.border = '6px solid red'
+        }
+        else {
+            document.getElementById("check1").innerText = ""
+            document.getElementById("height").style.border = 'none'
+        }
+    }
+
+    function check2() {
+        var weight = document.getElementById("weight").value;
+        if (isNaN(weight)) {
+            document.getElementById("check2").innerText = "**Please Enter The Weight (Number) Only**"
+            document.getElementById("weight").style.border = '6px solid red'
+        }
+        else {
+            document.getElementById("check2").innerText = ""
+            document.getElementById("weight").style.border = 'none'
+        }
+    }
+
+    function cal() {
+        var height = document.getElementById("height").value;
+        var weight = document.getElementById("weight").value;
+        var bmi = (weight / height) * 100
+        var ans = document.getElementById("ans")
+        ans.value = bmi;
+
+        if (bmi > 25) {
+            document.getElementById("res").style.background = "red"
+            alert('You Are Overweight')
+        }
+        else if (bmi > 18.5 && bmi < 24.9) {
+            document.getElementById("res").style.background = "yellow"
+            alert('You Are A Normal Person!! Good!')
+
+        }
+        else if (bmi < 18.5) {
+            document.getElementById("res").style.background = "green"
+            alert('You Are Underweight')
+        }
+        
+        setInterval(function back() {
+        location.reload()
+    }
+    ,3000)
+    }
+
+    function ok() {
+        document.getElementById("btn").style.color = 'yellow'
+    }
+
+    function again() {
+        document.getElementById("btn").style.color = "white"
+    }
+</script>
+
+</html>
+
+<!-- dj123@@45 -->
